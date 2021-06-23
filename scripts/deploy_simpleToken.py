@@ -12,7 +12,8 @@ def account_from_key():
 def deploy_token():
     # account = account_from_key()
     account = accounts.load('halongbay')
-    token = SimpleToken.deploy({"from": account})
+    simpleToken = SimpleToken.deploy({"from": account})
+    return simpleToken
 
 
 def main():
