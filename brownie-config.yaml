@@ -6,6 +6,12 @@ reports:
   exclude_contracts:
     - SafeMath
 
+networks:
+  default: development
+  halongbay:
+    verify: False
+  kovan:
+    verify: False
 wallets:
   from_key: ${PRIVATE_KEY}
   from_mnemonic: ${MNEMONIC}
