@@ -1,3 +1,5 @@
+.vscode/
+.idea/
 __pycache__
 .history
 .hypothesis/
@@ -6,3 +8,4 @@ reports/
 *.txt
 *.yaml
 .env
+venv
