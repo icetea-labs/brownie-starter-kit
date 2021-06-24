@@ -1,4 +1,8 @@
-from brownie import network, accounts, config, interface
+from brownie import (
+    network, 
+    accounts,
+    config
+)
 
 
 def get_account():
@@ -19,3 +23,8 @@ def get_verify_status():
         else False
     )
     return verify
+
+def is_halongbay():
+    if network.show_active() == 'halongbay':
+        return True
+    return False
