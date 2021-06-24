@@ -64,7 +64,14 @@ brownie test --network kovan
 brownie test --network halongbay
 ```
 
-## Resources
+## Testing
+### Deploy and interact with the smart contracts via RPC
+
+[x] Hello World
+[x] Basic Storage
+[] ERC20 Token
+[] ERC-721 NFT
+[] ChainLink
 
 
 ## License
