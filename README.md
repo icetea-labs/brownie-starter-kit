@@ -36,7 +36,7 @@ export MNEMONIC=''
 * `WEB3_INFURA_PROJECT_ID`: Your connection to the blockchain. You can get a URL from a service like Infura
 * `ETHERSCAN_TOKEN`:
 * `PRIVATE_KEY`: Your Private Key from your Wallet. If using metamask, you'll have to add a 0x to the start of your private key.
-* `MNEMONIC`: Your menemonic phasse
+* `MNEMONIC`: Your menemonic phase
 
 ### Run source .env
 
