@@ -4,43 +4,54 @@ An example smart contract toolkit
 
 ## Installation
 
+```bash
+pip install --user pipx
+
+pipx ensurepath
+
+# restart your terminal
+pipx install eth-brownie
+```
 
 ## Basic Use
 
-This mix provides a [simple ERC20 Token Template](contracts/Token.sol) upon which you can build your own token.
-
-To interact with a deployed contract in a local environment, start by opening the console:
+### Add network in brownie
+Add Folkafoundry halongbay network
 
 ```bash
-brownie console
+brownie networks add Polkafoundry halongbay host=https://rpc-halongbay.polkafoundry.com chainid=11
 ```
 
-Next, deploy a test token:
+### Set environment variables
 
-```python
->>> token = Token.deploy("Test Token", "TST", 18, 1e21, {'from': accounts[0]})
+You'll need the following environment variables. You can set them all in your .env file:
 
-Transaction sent: 0x4a61edfaaa8ba55573603abd35403cf41291eca443c983f85de06e0b119da377
-  Gas price: 0.0 gwei   Gas limit: 12000000
-  Token.constructor confirmed - Block: 1   Gas used: 521513 (4.35%)
-  Token deployed at: 0xd495633B90a237de510B4375c442C0469D3C161C
+```
+export WEB3_INFURA_PROJECT_ID=YourProjectID
+export ETHERSCAN_TOKEN=''
+export PRIVATE_KEY="0xasdfasdfasdfasd..."
+export MNEMONIC=''
 ```
 
-You now have a token contract deployed, with a balance of `1e21` assigned to `accounts[0]`:
+* `WEB3_INFURA_PROJECT_ID`: Your connection to the blockchain. You can get a URL from a service like Infura
+* `ETHERSCAN_TOKEN`:
+* `PRIVATE_KEY`: Your Private Key from your Wallet. If using metamask, you'll have to add a 0x to the start of your private key.
+* `MNEMONIC`: Your menemonic phasse
 
-```python
->>> token
-<Token Contract '0xd495633B90a237de510B4375c442C0469D3C161C'>
+### Run source .env
 
->>> token.balanceOf(accounts[0])
-1000000000000000000000
+This doesn't auto-pull in your .env file at the start, so you have to set your environment variables at the start.
 
->>> token.transfer(accounts[1], 1e18, {'from': accounts[0]})
-Transaction sent: 0xb94b219148501a269020158320d543946a4e7b9fac294b17164252a13dce9534
-  Gas price: 0.0 gwei   Gas limit: 12000000
-  Token.transfer confirmed - Block: 2   Gas used: 51668 (0.43%)
+```bash 
+source .env
+```
 
-<Transaction '0xb94b219148501a269020158320d543946a4e7b9fac294b17164252a13dce9534'>
+## Run Scripts
+
+```bash
+brownie run scripts/deploy.py
+brownie run scripts/deploy.py --network kovan
+brownie run scripts/deploy.py --network halongbay
 ```
 
 ## Testing
@@ -49,6 +60,8 @@ To run the tests:
 
 ```bash
 brownie test
+brownie test --network kovan
+brownie test --network halongbay
 ```
 
 ## Resources
