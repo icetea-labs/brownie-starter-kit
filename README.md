@@ -67,11 +67,11 @@ brownie test --network halongbay
 ## Testing
 ### Deploy and interact with the smart contracts via RPC
 
-[x] Hello World
-[x] Basic Storage
-[] ERC20 Token
-[] ERC-721 NFT
-[] ChainLink
+- [x] Hello World
+- [x] Basic Storage
+- [ ] ERC20 Token
+- [ ] ERC-721 NFT
+- [ ] ChainLink
 
 ## Contributing
 
