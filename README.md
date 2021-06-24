@@ -73,6 +73,10 @@ brownie test --network halongbay
 [] ERC-721 NFT
 [] ChainLink
 
+## Contributing
+
+Help is always appreciated! Feel free to open an issue if you find a problem, or a pull request if you've solved an issue.
+
 
 ## License
 
