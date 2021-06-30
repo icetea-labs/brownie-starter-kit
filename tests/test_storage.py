@@ -7,10 +7,10 @@ def test_init_number_of_value(storage):
 def test_add_two_values(storage, account, halongbay):
     tx = storage.storeValue(1337, {'from': account})
     if halongbay:
-        tx.wait(3)
+        tx.wait(1)
     tx = storage.storeValue(2008, {'from': account})
     if halongbay:
-        tx.wait(3)
+        tx.wait(1)
     number_of_values = storage.getNumberOfValues()
     assert number_of_values == 2
 
