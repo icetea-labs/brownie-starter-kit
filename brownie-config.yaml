@@ -12,6 +12,9 @@ networks:
     verify: False
   kovan:
     verify: False
+  localhost:
+    verify: False
+    
 wallets:
   from_key: ${PRIVATE_KEY}
   from_mnemonic: ${MNEMONIC}
